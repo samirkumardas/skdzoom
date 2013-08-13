@@ -1,6 +1,6 @@
 {
 "name": "skdzoom",
-"title": "A jquery stylish CSS3 image zoomer with lens zooming otpion",
+"title": "skdzoom - a image zoomer",
 "description": "SKDZoom is a Jquery stylish CSS3 image zoomer with rounded box and Lens zoom support. Easily customizable color and other options.",
 "keywords": [
 "zoom",
@@ -11,7 +11,7 @@
 "lens",
 "rounded"
 ],
-"version": "1.0.3",
+"version": "1.0.4",
 "author": {
 "name": "Samir Das"
 },
