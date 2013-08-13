@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SKDZoom - A Jquery stylish CSS3 image zoomer - Rounded Box Zoomer - Circle Path Zoomer - Image Lens Zoomer</title>
+<meta name="description" content="SKDZoom is a Jquery stylish CSS3 image zoomer with rounded box and Lens zoom support. Easily customizable color and other options.">
+<meta name="keywords" content="stylish image zoomer, stylish image zoom, jquery image zoom, image zoomer, image zoom, jquery lens image zoom, lese zoom, lens image zoomer, rounded box zoom">
+<meta name="robots" content="index, follow">
+<meta name="copyright" content="Samir Das">
+<meta name="language" content="EN">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="src/skdzoom.js"></script>
+<link href="src/demo.css" rel="stylesheet">
+<script type="text/javascript">
+		jQuery(document).ready(function(){
+		    jQuery('#demo1').skdzoom();
+			jQuery('#demo2').skdzoom({lensZoom:false});
+			jQuery('#demo3').skdzoom({lensZoom:false,circleBG:'random',circleBorderColor:'random','imageBorderColor':'random','imageBG':'random'});
+			jQuery('#demo4').skdzoom({radius:200,circleOffset:3});
+		});
+</script>
+</head>
+<body>
+<br /><br />
+<h3>SKDZoom - A jquery stylish CSS3 image zoomer with lens zoom support. Here are some demos:</h3>
+<br />
+<br />
+<div class="container">
+<h5>Default Setting</h5>
+<a id="demo1" rel="images/big.jpg">
+ <img src="images/small.jpg" width="100"/>
+</a>
+
+<h5>Lens Zooming off</h5>
+<a id="demo2" rel="images/big.jpg">
+ <img src="images/small.jpg" width="100"/>
+</a>
+
+<h5>Random Color</h5>
+<a id="demo3" rel="images/big.jpg">
+ <img src="images/small.jpg" width="100"/>
+</a>
+
+<h5>More Example</h5>
+<a id="demo4" rel="images/big.jpg">
+ <img src="images/small.jpg" width="100"/>
+</a>
+
+<h3>How to use?</h3>
+<span class="demo-code"> $('#demo').skdzoom();</span>
+<h3>Available Options</h3>
+<p>
+<table width="560" border="0" cellspacing="2" cellpadding="4">
+  <tr>
+    <td><strong>Option</strong></td>
+    <td><strong>Description</strong></td>
+  </tr>
+  <tr>
+    <td>radius</td>
+    <td>Radius of the rounded box (Big Image box). Example: 150</td>
+  </tr>
+  <tr>
+    <td>circleOffset</td>
+    <td>A number that can be used to djust distance between thubnail and rounded box (Big Image box). Example: 1.5 default value is 2</td>
+  </tr>
+  <tr>
+    <td>lensRadius</td>
+    <td>Lens Radius. Example: 10</td>
+  </tr>
+  <tr>
+    <td>lensZoom</td>
+    <td>true/false - Default value is true. Enable or disable lens zooming</td>
+  </tr>
+  <tr>
+    <td>imageBorder</td>
+    <td>Default value is 8. Rounded box border width</td>
+  </tr>
+  <tr>
+    <td>imageBorderColor</td>
+    <td>Default value is #000000. Rounded box border color</td>
+  </tr>
+   <tr>
+    <td>imageBorderColor</td>
+    <td>Default value is #000000. Rounded box border color</td>
+  </tr>
+   <tr>
+    <td>imageBG</td>
+    <td>Default value is #ffffff. Rounded box background color</td>
+  </tr>
+   <tr>
+    <td>circleBorderColor</td>
+    <td>Default value is #000000. Small circle border color</td>
+  </tr>
+  <tr>
+    <td>circleBG</td>
+    <td>Default value is #ffffff. Small circle background color</td>
+  </tr>
+   <tr>
+    <td>fadeSpeed</td>
+    <td>Default value is 500. Fading Speed in micro seconds. Example: 500</td>
+  </tr>
+</table>
+
+</p>
+<h3>Download SkdZoom</h3>
+<p><a href="http://dandywebsolution.com/blog/download/skdzoom.zip">Click here to download SkdZoom</a></p>
+</div>
+</body>
+</html>
