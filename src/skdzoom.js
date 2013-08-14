@@ -67,6 +67,7 @@
 						/*fix height 0 bug*/ 
 					   if(element.h==0){
 						 element.h =element.height();
+						 element.pos.b=element.h + element.pos.t;
 					   }
 					   $('div.zoom-pad',element).remove();
 					   $('div.skdzoom-wrapper',element).remove();	
@@ -110,14 +111,12 @@
 							  $('div.skdzoom-wrapper .skdzoom-container .skdzoom .loader',element).css('display','none');
 							  $('div.skdzoom-wrapper .skdzoom-container .skdzoom',element).append($(this));
 							   
-							    config.loadingDone=true;
-								
+							    
 							   /*Set scale for showing larger image while lens moving*/
 							   element.scale.x = ($(this).width() / element.w);
                                element.scale.y = ($(this).height() / element.h);
-							   
-							   
-							   
+							    config.loadingDone=true;
+							
 							   /*Initializ lens*/
 							   if(config.lensZoom){
 								   $(this).css({'position':'absolute'});
@@ -129,6 +128,7 @@
 							   {
 								 $(this).css({'height':height,'width':width});   
 							   }
+							  
 							   
 						  }).addClass('big-image').attr('src',zoomImg);
 					   });
@@ -148,6 +148,7 @@
 		if(config.lensZoom){
 			
 			element.mousemove(function(e){
+				
 					 if(typeof e.pageX !="undefined"){				   
 						 element.mousepos.x = e.pageX;
 						 element.mousepos.y = e.pageY;
@@ -172,6 +173,7 @@
 		 if((element.mousepos.y-config.lensRadius)<element.pos.t) top=0;
 		 if((element.mousepos.y+config.lensRadius)>element.pos.b) top=element.h-(config.lensRadius*2)-1;
 		
+		//console.log('bottom check='+(element.mousepos.y+config.lensRadius)+' and bottom='+element.pos.b);
 		
 		 $('div.zoom-pad',element).css({'left':left,'top':top});
 		 
@@ -186,13 +188,13 @@
 	 var top=element.mousepos.y - element.pos.t - config.lensRadius;
 	 
 	 var lensPos=$('div.zoom-pad',element).position();
-	 //console.log('left='+lensPos.left+' and top='+lensPos.top);
-	 var left = -element.scale.x * (lensPos.left+1);
-     var top = -element.scale.y * (lensPos.top+1);
+	 //console.log('pos l='+lensPos.left+' and pos t='+lensPos.top);
+	 if(typeof lensPos!='undefined'){
+	   var left = -element.scale.x * (lensPos.left+1);
+       var top = -element.scale.y * (lensPos.top+1);
+	   $('div.skdzoom-wrapper .skdzoom-container .skdzoom img.big-image',element).css({'left':left,'top':top});
+	 }
 	 
-	 
-
-	 $('div.skdzoom-wrapper .skdzoom-container .skdzoom img.big-image',element).css({'left':left,'top':top});
   };
 
   $.skdzoom.circle=function(element,config){
